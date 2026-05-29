@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Location Share</title>
+</head>
+<body>
+<h2>Share Your Location</h2>
+<button onclick="getLocation()">Share Location</button>
+
+<p id="result"></p>
+
+<script>
+function getLocation() {
+navigator.geolocation.getCurrentPosition(
+function(position) {
+document.getElementById("result").innerHTML =
+"Latitude: " + position.coords.latitude +
+"<br>Longitude: " + position.coords.longitude;
+},
+function(error) {
+document.getElementById("result").innerHTML =
+"Location access denied.";
+}
+);
+}
+</script>
+
+</body>
+</html>
